@@ -1,10 +1,7 @@
 class Pangram
   @@alphabet = [*('a'..'z')]
   def self.pangram?(str)
-    @@alphabet.each do |letter|
-      return false unless str.downcase.include?(letter)
-    end
-    true
+    @@alphabet.all? { |char| str.downcase.include?(char) }
   end
 end
 
